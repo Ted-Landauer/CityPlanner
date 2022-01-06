@@ -1,7 +1,21 @@
-print("Welcome to the City Planner!\n\nPlease select the size of the city you would like to create...")
+import ThorpBuilder
 
-test = open(r"TownSizes.txt","r")
-print(test)
+print("Welcome to the City Planner!\n\nPlease select the size of the city you would like to create? Your options are...\n")
 
-val = input("Options:\n")
-print(val)
+townSizes = open(r"./textFiles/TownSizes.txt","r")
+townList = []
+
+ThorpBuilder.thorp()
+
+
+for towns in townSizes:
+    print(towns, end='')
+    
+    townList.append(towns)
+    
+
+val = input("\n\nSelection: ")
+
+print("You've selected a " + val)
+
+

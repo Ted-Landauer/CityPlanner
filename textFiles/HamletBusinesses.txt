@@ -1,0 +1,4 @@
+Taverns/Inn
+Cemeteries
+Tailors
+Apothicaries

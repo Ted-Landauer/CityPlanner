@@ -1,0 +1,8 @@
+Breweries
+Bakeries
+Weapon Shops
+Armories
+Repair Shops
+Healers/Hospitals
+Guard Posts
+Trinket Shops

@@ -1,0 +1,9 @@
+City Classification, Population Counts
+Thorp, 20 - 80
+Hamlet, 81 - 400
+Village, 401 - 900
+Small Town, 901 - 2000
+Large Town, 2001 - 5000
+Small City, 5001 - 12000
+Large City, 12001 - 25000
+Metropolis, 25001+
