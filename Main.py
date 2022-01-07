@@ -1,4 +1,5 @@
 import random
+import re
 
 
 
@@ -8,17 +9,14 @@ class CityBuilder:
     #fullList = []
     #finalList = []
 
-    print("does this work?")
+
     
     def __init__(self):
         self.townList = []
         self.fullList = []
         self.finalList = []
-        
-        
-            
-            
-            
+
+
 
     def populateLists(self):
 
@@ -166,14 +164,27 @@ class CityBuilder:
         print(str(i) + ": " + x)
         i += 1
     '''
+    
     def main(self):
+    
         print("Welcome to the City Planner!\n\nPlease select the size of the city you would like to create? Your options are...\n")
         
         self.populateLists()
-
-        val = input("\n\nSelection: ")
-
-        print("You've selected a " + val + ". Please hold while I build your city\n")
+        
+        
+        
+        while True:
+                
+            val = input("\n\nSelection: ").title()
+            
+            r = re.compile(val)
+            
+            if list(filter(r.match, self.townList)):
+                print("You've selected a " + val + ". Please hold while I build your city\n")
+                break;
+            else:
+                print("I'm sorry. That doesn't seem to be an option. Please try again")
+                 
         
         self.buildCity(val)
         
@@ -182,13 +193,7 @@ class CityBuilder:
         for x in self.finalList:
             
             print(x)
-            
-            
-            
-    '''
-    if __name__=="__main__":
-        main()
-    '''
+        
     
     
     
