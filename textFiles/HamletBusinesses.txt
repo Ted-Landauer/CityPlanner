@@ -2,3 +2,5 @@ Taverns/Inn
 Cemeteries
 Tailors
 Apothicaries
+Local Mage
+Wildsman

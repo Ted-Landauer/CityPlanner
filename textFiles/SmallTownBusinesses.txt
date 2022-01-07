@@ -1,10 +1,6 @@
-Restaurants
+Stables
 Parks
 Churches/Temples
 Libraries
-Sewers
-Orphanages/Aslyums
+Trinket Shops
 Map/Caligraphy/Paper Shops
-Guildhalls
-Jewlers
-Pawn Shops

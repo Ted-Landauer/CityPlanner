@@ -1,2 +1,6 @@
 Arena
 Magic Item Shops
+Ship Yard
+Golemery (Makes constructs for use in the city)
+Mail Carriers/Delivery/Newspaper Services
+Archmage/Head Magic User

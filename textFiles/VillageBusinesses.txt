@@ -5,4 +5,4 @@ Armories
 Repair Shops
 Healers/Hospitals
 Guard Posts
-Trinket Shops
+Square/Market/City Center

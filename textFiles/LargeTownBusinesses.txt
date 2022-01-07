@@ -1,4 +1,6 @@
 Docks/Shipping Yards
 Bookstores
 Banks
-Thieves Guilds
+Restaurants
+Sewers
+Guildhalls
