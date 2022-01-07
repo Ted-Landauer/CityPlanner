@@ -193,6 +193,31 @@ class CityBuilder:
         for x in self.finalList:
             
             print(x)
+            
+        print("would you like to redo this town?")
+        
+        while True:
+            
+            redo = input("[Y/N]: ")
+            
+            if redo.upper() == "Y":
+                print("Understood. Try this one...")
+                
+                self.buildCity(val)
+                
+            elif redo.upper() == "N":
+                again = input("Got it. Do you want to do another town? [Y/N]: ")
+                
+                if again.upper() == "Y":
+                    print("Coming right up")
+                    
+                else:
+                    print("Have a good day")
+                    
+            else:
+                print("Not sure what you mean there...")
+                
+                break;
         
     
     
