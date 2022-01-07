@@ -165,6 +165,52 @@ class CityBuilder:
         i += 1
     '''
     
+    def printResults(self, finalList):
+    
+        print("Your town contains the following businesses...\n")
+
+        for x in self.finalList:
+            
+            print(x)
+            
+    
+    def retryGeneration(self, val):
+        
+        while True:
+            
+            redo = input("would you like to redo this town? [Y/N]: ")
+            
+            if redo.upper() == "Y":
+                print("Understood. Try this one...\n")
+                
+                self.finalList.clear()
+                
+                self.buildCity(val)
+                
+                for x in self.finalList:
+            
+                    print(x)
+                
+            elif redo.upper() == "N":
+                again = input("Got it. Do you want to do another town? [Y/N]: ")
+                
+                if again.upper() == "Y":
+                    print("Coming right up")
+                    
+                    self.main()
+                    
+                else:
+                    print("Have a good day")
+                    
+                    break;
+                
+                break;
+            else:
+                print("Not sure what you mean there...")
+                
+                break;
+        
+    
     def main(self):
     
         print("Welcome to the City Planner!\n\nPlease select the size of the city you would like to create? Your options are...\n")
@@ -187,37 +233,9 @@ class CityBuilder:
                  
         
         self.buildCity(val)
+        self.printResults(self.finalList)
+        self.retryGeneration(val)
         
-        print("Your town contains the following businesses...\n")
-
-        for x in self.finalList:
-            
-            print(x)
-            
-        print("would you like to redo this town?")
-        
-        while True:
-            
-            redo = input("[Y/N]: ")
-            
-            if redo.upper() == "Y":
-                print("Understood. Try this one...")
-                
-                self.buildCity(val)
-                
-            elif redo.upper() == "N":
-                again = input("Got it. Do you want to do another town? [Y/N]: ")
-                
-                if again.upper() == "Y":
-                    print("Coming right up")
-                    
-                else:
-                    print("Have a good day")
-                    
-            else:
-                print("Not sure what you mean there...")
-                
-                break;
         
     
     
