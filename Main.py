@@ -15,6 +15,7 @@ class CityBuilder:
         self.townList = []
         self.fullList = []
         self.finalList = []
+        self.extraTableNumber = 0
 
 
 
@@ -111,14 +112,17 @@ class CityBuilder:
                 
         elif userInput.upper() == "SMALL TOWN":
             
+            self.extraTableNumber = 1
             #more to do to this section
             i = 1
             while i < 13:
                 self.finalList.append(self.fullList[random.randint(6,25)])
                 
                 i += 1
-                
+                               
         elif userInput.upper() == "LARGE TOWN":
+            
+            self.extraTableNumber = 2
             
             i = 1
             while i < 13:
@@ -128,6 +132,8 @@ class CityBuilder:
                 
         elif userInput.upper() == "SMALL CITY":
             
+            self.extraTableNumber = 3
+            
             i = 1
             while i < 13:
                 self.finalList.append(self.fullList[random.randint(20,39)])
@@ -136,6 +142,8 @@ class CityBuilder:
                 
         elif userInput.upper() == "LARGE CITY":
             
+            self.extraTableNumber = 4
+            
             i = 1
             while i < 13:
                 self.finalList.append(self.fullList[random.randint(26,45)])
@@ -143,6 +151,8 @@ class CityBuilder:
                 i += 1
                 
         elif userInput.upper() == "METROPOLIS":
+            
+            self.extraTableNumber = 5
             
             i = 1
             while i < 17:
@@ -167,11 +177,48 @@ class CityBuilder:
     
     def printResults(self, finalList):
     
+        listBeginnings = 0
         print("Your town contains the following businesses...\n")
 
         for x in self.finalList:
-            
+
             print(x)
+            
+        if self.extraTableNumber == 0:
+            pass
+            
+        elif self.extraTableNumber == 1:
+        
+            print("-----Also, please select any number of the following options from the Thorp table-----\n")
+
+            while listBeginnings < 6:
+                print(self.fullList[listBeginnings], end='')
+                listBeginnings += 1
+        
+        elif self.extraTableNumber == 2:
+        
+            print("-----Also, please select any number of the following options from the Hamlet and Thorp tables-----\n")
+        
+            while listBeginnings < 12:
+                print(self.fullList[listBeginnings], end='')
+                listBeginnings += 1
+        
+        elif self.extraTableNumber == 3:
+        
+            print("-----Also, please select any number of the following options from the Village, Hamlet, and Thorp tables-----\n")
+        
+            while listBeginnings < 20:
+                print(self.fullList[listBeginnings], end='')
+                listBeginnings += 1
+        
+        elif self.extraTableNumber > 3:
+        
+            print("-----Also, please select any number of the following options from the Small Town, Village, Hamlet, and Thorp tables-----\n")
+            
+            while listBeginnings < 26:
+                print(self.fullList[listBeginnings], end='')
+                listBeginnings += 1
+        
             
     
     def retryGeneration(self, val):
@@ -187,15 +234,18 @@ class CityBuilder:
                 
                 self.buildCity(val)
                 
-                for x in self.finalList:
-            
-                    print(x)
+                self.printResults(self.finalList)
                 
             elif redo.upper() == "N":
                 again = input("Got it. Do you want to do another town? [Y/N]: ")
                 
                 if again.upper() == "Y":
-                    print("Coming right up")
+                
+                    self.extraTableNumber = 0
+                    
+                    print("Coming right up\n")
+                    
+                    self.finalList.clear()
                     
                     self.main()
                     
@@ -208,7 +258,6 @@ class CityBuilder:
             else:
                 print("Not sure what you mean there...")
                 
-                break;
         
     
     def main(self):
