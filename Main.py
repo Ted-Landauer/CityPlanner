@@ -73,8 +73,9 @@ class CityBuilder:
         #fill in the list of different town sizes and print it
         for towns in townSizes:
             print(towns, end='')
-            
-            self.townList.append(towns)
+            #print(towns.strip(), end='')
+            #print("This is towns: " + towns)
+            self.townList.append(towns.strip())
 
 
     #function to build out the actual city business lists
@@ -86,6 +87,9 @@ class CityBuilder:
             #randomly add a business from the matching list, duplicates are expected and wanted
             i = 1
             while i < 6:
+                #print("this is thorp business list size: " + str(len(self.fullList)))
+                
+                
                 self.finalList.append(self.fullList[random.randint(0,5)])
                 
                 i += 1
